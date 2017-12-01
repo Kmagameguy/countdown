@@ -1,5 +1,5 @@
 function loadTimer() {
-  var deadline = new Date("Dec 1, 2017 17:30:00").getTime();
+  var deadline = new Date("Dec 2, 2017 08:32:00").getTime();
 
   var x = setInterval(function() {
     var now = new Date().getTime();
@@ -23,6 +23,9 @@ function loadTimer() {
       clearInterval(x);
       var celebrationText = "<h1 class='lgText'>0d 0h 0m 0s Remaining</h1>";
       celebrationText += "<h1 class='lgText'>PARTY TIME!</h1>";
+      celebrationText += "<div>";
+      celebrationText += "<iframe width='513' height='490' src='https://www.youtube.com/watch?v=VtWxBwBLS9U?autoplay=1'></iframe>";
+      celebrationText += "</div>";
 
       document.getElementById('main').style.backgroundImage = "url('images/party.gif')";
       document.getElementById("demo").innerHTML = celebrationText;
