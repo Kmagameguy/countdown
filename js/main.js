@@ -1,5 +1,5 @@
 function loadTimer() {
-  var deadline = new Date("Dec 7, 2017 17:00:00").getTime();
+  var deadline = new Date("Dec 12, 2017 17:15:00").getTime();
 
   var x = setInterval(function() {
     var now = new Date().getTime();
