@@ -8,7 +8,10 @@ function loadTimer() {
     var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-    var coverImages = bgMusic = [], imageIndex = musicIndex = 0;
+    var coverImages = [];
+    var bgMusic = [];
+    var imageIndex = 0;
+    var musicIndex = 0;
 
     coverImages[0] = 'url("images/party.gif")';
     coverImages[1] = 'url("images/dance.gif")';
