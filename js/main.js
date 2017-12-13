@@ -1,5 +1,5 @@
 function loadTimer() {
-  var deadline = new Date("Dec 13, 2017 17:00:00").getTime();
+  var deadline = new Date("Dec 13, 2017 12:53:12").getTime();
 
   var x = setInterval(function() {
     var now = new Date().getTime();
@@ -8,14 +8,23 @@ function loadTimer() {
     var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-    var coverImages = [], index = 0;
+    var coverImages = bgMusic = [], imageIndex = musicIndex = 0;
 
     coverImages[0] = 'url("images/party.gif")';
     coverImages[1] = 'url("images/dance.gif")';
     coverImages[2] = 'url("images/glasses.gif")';
     coverImages[3] = 'url("images/shaq.gif")';
 
-    index = Math.floor( Math.random() * coverImages.length );
+    bgMusic[0] = '<iframe width="20" height="20" src="https://www.youtube.com/embed/VtWxBwBLS9U?autoplay=1" style="visibility:hidden;"></iframe>';
+    bgMusic[1] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/122570957&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
+    bgMusic[2] = '<iframe width="560" height="315" style="visibility:hidden;" src="https://www.youtube.com/embed/4LfJnj66HVQ?rel=0&amp;showinfo=0&amp;start=16" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>';
+    bgMusic[3] = '<iframe width="560" height="315" style="visibility:hidden;" src="https://www.youtube.com/embed/HMUDVMiITOU?rel=0&amp;showinfo=0&amp;start=15" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>';
+    bgMusic[4] = '<iframe width="560" height="315" style="visibility:hidden;" src="https://www.youtube.com/embed/12CeaxLiMgE?rel=0&amp;showinfo=0&amp;start=56" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>';
+
+    imageIndex = Math.floor( Math.random() * coverImages.length );
+    musicIndex = Math.floor( Math.random() * bgMusic.length );
+
+    console.log(bgMusic[musicIndex]);
 
     var timerText = "<h1 class='lgText'>";
     timerText += days + "d ";
@@ -32,11 +41,10 @@ function loadTimer() {
       var celebrationText = "<h1 class='lgText'>0d 0h 0m 0s Remaining</h1>";
       celebrationText += "<h1 class='lgText'>PARTY TIME!</h1>";
       celebrationText += "<div>";
-      celebrationText += "<iframe width='20' height='20' src='https://www.youtube.com/embed/VtWxBwBLS9U?autoplay=1' style='visibility:hidden;'></iframe>";
+      celebrationText += bgMusic[musicIndex];
       celebrationText += "</div>";
 
-      document.getElementById('main').style.backgroundImage = coverImages[index];
-      console.log(coverImages[index]);
+      document.getElementById('main').style.backgroundImage = coverImages[imageIndex];
       document.getElementById("demo").innerHTML = celebrationText;
     }
   }, 1000);
