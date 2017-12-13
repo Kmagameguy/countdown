@@ -24,7 +24,7 @@ function loadTimer() {
       var celebrationText = "<h1 class='lgText'>0d 0h 0m 0s Remaining</h1>";
       celebrationText += "<h1 class='lgText'>PARTY TIME!</h1>";
       celebrationText += "<div>";
-      celebrationText += "<iframe width='20' height='20' src='https://www.youtube.com/embed/VtWxBwBLS9U?autoplay=1'></iframe>";
+      celebrationText += "<iframe width='20' height='20' src='https://www.youtube.com/embed/VtWxBwBLS9U?autoplay=1' style='visibility:hidden;'></iframe>";
       celebrationText += "</div>";
 
       document.getElementById('main').style.backgroundImage = "url('images/party.gif')";
