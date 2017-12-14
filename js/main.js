@@ -17,6 +17,10 @@ function loadTimer() {
     coverImages[1] = 'url("images/dance.gif")';
     coverImages[2] = 'url("images/glasses.gif")';
     coverImages[3] = 'url("images/shaq.gif")';
+    coverImages[4] = 'url("images/bale.gif")';
+    coverImages[5] = 'url("images/biden.gif")';
+    coverImages[6] = 'url("images/duane.gif")';
+    coverImages[7] = 'url("images/got.gif")';
 
     bgMusic[0] = '<iframe width="20" height="20" src="https://www.youtube.com/embed/VtWxBwBLS9U?autoplay=1" style="visibility:hidden;"></iframe>';
     bgMusic[1] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/122570957&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
