@@ -1,5 +1,5 @@
 function loadTimer() {
-  var deadline = new Date("Dec 14, 2017 16:30:00").getTime();
+  var deadline = new Date("Dec 14, 2017 11:30:00").getTime();
 
   var x = setInterval(function() {
     var now = new Date().getTime();
@@ -36,7 +36,7 @@ function loadTimer() {
     bgMusic[9] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209723078&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
     bgMusic[10] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/162978980&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
     bgMusic[11] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/280005528&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
-    
+
     imageIndex = Math.floor( Math.random() * coverImages.length );
     musicIndex = Math.floor( Math.random() * bgMusic.length );
 
@@ -54,8 +54,7 @@ function loadTimer() {
 
     if (timeRemaining < 0) {
       clearInterval(x);
-      var celebrationText = "<h1 class='lgText'>0d 0h 0m 0s Remaining</h1>";
-      celebrationText += "<h1 class='lgText'>PARTY TIME!</h1>";
+      var celebrationText = "<h1 class='lgText' id='partyTime'>IT'S PARTY TIME!</h1>";
       celebrationText += "<div>";
       celebrationText += bgMusic[musicIndex];
       celebrationText += "</div>";
