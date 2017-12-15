@@ -4,6 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="js/jquery-3.2.1.min.js"></script>
@@ -14,8 +15,14 @@
     <div id="inner">
       <div class="row">
         <h1 class="lgText">Happy Hour Countdown!</h1>
+        <h1 class="lgText" id="partyTime" style="display:none;">IT'S PARTY TIME!</h1>
       </div>
-      <div class="row" id="demo">
+      <div class="row">
+        <div id="fresh-button" style="display:none;">
+          <button type='button' class='btn btn-info btn-lg' onclick='loadTimer()'>Get Fresh Entertainment!</button>
+        </div>
+      </div>
+      <div class="row" id="counter">
         <img src="images/spinner.gif" alt="Starting Countdown..." height="128" width="128">
       </div>
     </div>
