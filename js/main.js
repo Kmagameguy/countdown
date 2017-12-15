@@ -1,5 +1,5 @@
 function loadTimer() {
-  var deadline = new Date("Dec 14, 2017 11:30:00").getTime();
+  var deadline = new Date("Dec 14, 2017 18:25:00").getTime();
 
   var x = setInterval(function() {
     var now = new Date().getTime();
@@ -8,6 +8,7 @@ function loadTimer() {
     var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
     var coverImages = [];
     var bgMusic = [];
     var imageIndex = 0;
@@ -23,8 +24,9 @@ function loadTimer() {
     coverImages[7] = 'url("images/got.gif")';
     coverImages[8] = 'url("images/urkel.gif")';
     coverImages[9] = 'url("images/colbert.gif")';
+    coverImages[10] = 'url("images/khaled.gif")';
 
-    bgMusic[0] = '<iframe width="20" height="20" src="https://www.youtube.com/embed/VtWxBwBLS9U?autoplay=1" style="visibility:hidden;"></iframe>';
+    bgMusic[0] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8976187&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
     bgMusic[1] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/122570957&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
     bgMusic[2] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/89178062&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
     bgMusic[3] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/183028796&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
@@ -37,8 +39,8 @@ function loadTimer() {
     bgMusic[10] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/162978980&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
     bgMusic[11] = '<iframe width="100%" height="300" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/280005528&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
 
-    imageIndex = Math.floor( Math.random() * coverImages.length );
-    musicIndex = Math.floor( Math.random() * bgMusic.length );
+    imageIndex = randomIndex(coverImages);
+    musicIndex = randomIndex(bgMusic);
 
     console.log(bgMusic[musicIndex]);
 
@@ -58,11 +60,17 @@ function loadTimer() {
       celebrationText += "<div>";
       celebrationText += bgMusic[musicIndex];
       celebrationText += "</div>";
+      celebrationText += "<div id='fresh-button'><button type='button' class='btn btn-info btn-lg' onclick='loadTimer()'>Get Fresh Entertainment!</button></div>";
 
       document.getElementById('main').style.backgroundImage = coverImages[imageIndex];
       document.getElementById("demo").innerHTML = celebrationText;
     }
   }, 1000);
+}
+
+function randomIndex(input) {
+  var newIndex = Math.floor( Math.random() * input.length );
+  return newIndex;
 }
 
 loadTimer();
