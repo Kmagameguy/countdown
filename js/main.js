@@ -1,5 +1,5 @@
 function loadTimer() {
-  var deadline = new Date("Dec 20, 2017 17:00:00").getTime();
+  var deadline = new Date("Dec 20, 2017 16:30:00").getTime();
   var coverImages = [];
   var bgMusic = [];
   var imageIndex = 0;
