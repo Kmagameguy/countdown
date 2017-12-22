@@ -1,5 +1,5 @@
 function loadTimer() {
-  var deadline = new Date("Dec 22, 2017 16:00:00").getTime();
+  var deadline = new Date("Dec 22, 2017 15:40:00").getTime();
   var coverImages = [];
   var bgMusic = [];
   var imageIndex = 0;
@@ -51,10 +51,25 @@ function loadTimer() {
     var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
     var timerText = "<h1 class='lgText'>";
-    timerText += days + "d ";
-    timerText += hours + "h ";
-    timerText += minutes + "m ";
-    timerText += seconds + "s ";
+    if(days === 0 && hours === 0 && minutes === 0) {
+      timerText += seconds + "s ";
+    }
+    else if(days === 0 && hours == 0) {
+      timerText += minutes + "m ";
+      timerText += seconds + "s ";
+    }
+    else if(days === 0) {
+      timerText += hours + "h ";
+      timerText += minutes + "m ";
+      timerText += seconds + "s ";
+    }
+    else {
+      timerText += days + "d ";
+      timerText += hours + "h ";
+      timerText += minutes + "m ";
+      timerText += seconds + "s ";
+    }
+
     timerText += "Remaining";
     timerText += "</h1>";
 
