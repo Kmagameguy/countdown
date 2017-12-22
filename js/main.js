@@ -23,6 +23,7 @@ function loadTimer() {
   coverImages[15] = 'url("images/farley.gif")';
   coverImages[16] = 'url("images/fingerGuns.gif)';
   coverImages[17] = 'url("images/celeryMan.gif)';
+  coverImages[18] = 'url("images/crews.gif)';
 
   bgMusic[0] = '<iframe width="0" height="0" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/8976187&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
   bgMusic[1] = '<iframe width="0" height="0" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/122570957&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
