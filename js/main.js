@@ -2,8 +2,10 @@ function loadTimer() {
   var deadline = new Date("Jan 4, 2018 16:00:00").getTime();
   var coverImages = [];
   var bgMusic = [];
+  var quotes = [];
   var imageIndex = 0;
   var musicIndex = 0;
+  var quoteIndex = 0;
 
   coverImages[0] = 'url("images/party.gif")';
   coverImages[1] = 'url("images/dance.gif")';
@@ -43,6 +45,17 @@ function loadTimer() {
   bgMusic[14] = '<iframe width="0" height="0" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/180668559&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
   bgMusic[15] = '<iframe width="0" height="0" scrolling="no" style="visibility:hidden;" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/209112457&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>';
 
+  quotes[0] = "You can have any brew you want... as long as it's a Corona - Dominic Toretto";
+  quotes[1] = "If you want the career-changing big fish, you gotta be willing to put on the big boy panties and sail out to the deep water. - Brian O'Connor";
+  quotes[2] = "Ejecto seato, cuz! - Roman Pearce";
+  quotes[3] = "I live my life a quarter mile at a time...For those 10 seconds or less, I'm free. - Dominic Toretto";
+  quotes[4] = "Me not working hard? Yeah, right. Picture that with a Kodak. And, better yet, go to Times Square, take a picture of me with a Kodak. - Pitbull";
+  quotes[5] = "Weezy F. Baby and the 'F' is for phenomenal. - Lil Wayne";
+  quotes[6] = "Drinking every night because we drink to my accomplishments. - Drake";
+  quotes[7] = "They will try to close the door on you, just open it. - DJ Khaled";
+  quotes[8] = "If I want to party, I'll party at my house. - Shia LaBeouf";
+  quotes[9] = "When life gives you lemons, just say 'fuck the lemons' and bail! - Paul Rudd";
+  quotes[10] = "No, I like to rock n' roll all night and PART of every day.  I usually have errands.  I can only rock from like 1-3. - Paul Rudd";
   var x = setInterval(function() {
     var now = new Date().getTime();
     var timeRemaining = deadline - now;
@@ -78,9 +91,15 @@ function loadTimer() {
 
     if (timeRemaining < 0) {
       clearInterval(x);
+
       imageIndex = randomIndex(coverImages);
       musicIndex = randomIndex(bgMusic);
+      quoteIndex = randomIndex(quotes);
+
+      document.getElementById('countdown-container').style.display = "none";
       document.getElementById('partyTime').style.display = "block";
+      document.getElementById('quotable').style.display = "block";
+      document.getElementById('quotable').innerHTML = quotes[quoteIndex];
       document.getElementById('fresh-button').style.display = "block";
       document.getElementById('main').style.backgroundImage = coverImages[imageIndex];
       document.getElementById('counter').innerHTML = bgMusic[musicIndex];
