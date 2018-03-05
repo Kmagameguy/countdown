@@ -1,7 +1,7 @@
 function loadTimer() {
 // TO DO
 // Add Ball-OUT button to generate automatic emails
-  var deadline = new Date("Feb 27, 2018 16:15:00").getTime();
+  var deadline = new Date("Mar 5, 2018 16:00:00").getTime();
   var coverImages = [];
   var bgMusic = [];
   var quotes = [];
